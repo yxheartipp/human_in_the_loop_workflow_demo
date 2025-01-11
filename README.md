@@ -26,6 +26,13 @@ All the logic is handled by the backend, and the frontend is just a display.
 
 This is a FastAPI app. It has a websocket endpoint that the frontend connects to. It uses the `HITLWorkflow` class to run the workflow.
 
+## Configuration
+
+Before running the application, you need to set up your DashScope API key in `backend/app.py`:
+
+1. Sign up for a DashScope account and get your API key
+2. Replace `your_api_key_here` in `backend/app.py` with your actual API key
+
 ## FastAPI
 
 This does a few simple things:

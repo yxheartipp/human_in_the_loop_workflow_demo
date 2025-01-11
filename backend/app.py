@@ -7,9 +7,18 @@ from llama_index.core.workflow.events import (
     HumanResponseEvent
 )
 from llama_index.core.workflow.handler import WorkflowHandler
+from config import init_qwen
 
 # create our FastAPI app
 app = FastAPI()
+
+# 在这里添加您的API密钥
+DASHSCOPE_API_KEY = "your_api_key_here"
+
+@app.on_event("startup")
+async def startup_event():
+    """在应用启动时初始化Qwen API"""
+    init_qwen(DASHSCOPE_API_KEY)
 
 # create a websocket endpoint for our app
 @app.websocket("/query")
